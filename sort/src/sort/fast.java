@@ -31,21 +31,21 @@ public class fast {
         }
         int left = begin;
         int right = end;
-        int index = left;
-        while (left < end) {
-            while (arr[index] < arr[right]) {
+        int temp = arr[begin];
+        while (left < right) {
+            // ==条件的意义
+            while (temp <= arr[right] && left < right) {
                 right--;
             }
-            index = right;
-            swap(arr, index, right);
-            while (arr[index] > arr[left]) {
+            arr[left] = arr[right];
+            while (temp >= arr[left] && left < right) {
                 left++;
             }
-            index = left;
-            swap(arr, index, right);
+            arr[right] = arr[left];
         }
-        fastSort(arr, begin, index);
-        fastSort(arr, index, end);
+        arr[left] = temp;
+        fastSort(arr, begin, left - 1);
+        fastSort(arr, left + 1, end);
     }
 
     static void swap(int[] arr, int i, int j) {

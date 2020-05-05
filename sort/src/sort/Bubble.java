@@ -5,7 +5,7 @@ import utils.PrintArr;
 
 public class Bubble {
     public static void main(String[] args) {
-        int[] nums = GenerateDataUtil.getData(50);
+        int[] nums = GenerateDataUtil.getRandomData(50);
         PrintArr.printArr(nums);
         sort(nums);
         System.out.println("排序后");

@@ -5,7 +5,7 @@ import utils.PrintArr;
 
 public class Fast {
     public static void main(String[] args) {
-        int[] arr = GenerateDataUtil.getData(100);
+        int[] arr = GenerateDataUtil.getRandomData(100);
         System.out.println("排序前：");
         PrintArr.printArr(arr);
         fastSort(arr, 0, arr.length - 1);
@@ -13,7 +13,7 @@ public class Fast {
         PrintArr.printArr(arr);
     }
 
-    static void fastSort(int[] arr, int begin, int end) {
+    public static void fastSort(int[] arr, int begin, int end) {
         if (end <= begin) {
             return;
         }
